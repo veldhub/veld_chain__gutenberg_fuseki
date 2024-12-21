@@ -7,7 +7,7 @@ services:
       file: ./code/veld_code__apache_jena_fuseki/veld_run_server.yaml
       service: veld_run_server
     volumes:
-      - ./data/fuseki_data/:/veld/code/run/
+      - ./data/fuseki_data/:/veld/storage/
       - ./data/fuseki_config/:/veld/input/config/
 
 networks:
