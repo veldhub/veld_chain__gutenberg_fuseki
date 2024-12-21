@@ -7,7 +7,9 @@ services:
       file: ./code/veld_code__apache_jena_fuseki/veld_import_rdf.yaml
       service: veld_import_rdf
     volumes:
-      - ./data/rdf_import/:/veld/input/import/
+      - ./data/import_rdf/:/veld/input/
+    environment:
+      fuseki_dataset_name: gutenberg
 
 networks:
   veld_fuseki:
