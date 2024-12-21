@@ -7,7 +7,7 @@ services:
       file: ./code/veld_code__apache_jena_fuseki/veld_import_rdf.yaml
       service: veld_import_rdf
     volumes:
-      - ./data/import_rdf/:/veld/input/
+      - ./data/gutenberg_rdf/rdf-files/cache/epub/:/veld/input/
     environment:
       fuseki_dataset_name: gutenberg
 
