@@ -12,11 +12,9 @@ services:
       - ./data/fuseki_export/:/veld/output/
     environment:
       in_query_file: query1.rq
-      out_file: null
+      out_file: data.csv
       out_format: csv
-      fuseki_server_url: http://veld_run_server
-      fuseki_server_port: 3030
-      fuseki_dataset_name: null
+      fuseki_dataset_name: gutenberg
 
 networks:
   veld_fuseki:
