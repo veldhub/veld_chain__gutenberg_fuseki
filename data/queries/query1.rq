@@ -3,8 +3,15 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX base: <http://www.gutenberg.org/>
 PREFIX agent: <http://www.gutenberg.org/2009/agents/>
 
-SELECT DISTINCT ?book_uri ?creator WHERE {
-  ?lang rdf:value "hu"^^<http://purl.org/dc/terms/RFC4646> .
+SELECT DISTINCT ?book_uri WHERE {
+  ?lang rdf:value "de"^^<http://purl.org/dc/terms/RFC4646> .
   ?book_uri <http://purl.org/dc/terms/language> ?lang .
-  ?book_uri <http://purl.org/dc/terms/creator> ?creator . 
+  FILTER NOT EXISTS {
+    ?book_uri <http://purl.org/dc/terms/hasFormat> ?format .
+    FILTER(STRENDS(STR(?format), "tei")) .
+  }
+  FILTER EXISTS {
+    ?book_uri <http://purl.org/dc/terms/hasFormat> ?format .
+    FILTER(STRENDS(STR(?format), "txt") || STRENDS(STR(?format), "txt.utf-8"))  .
+  }
 }
