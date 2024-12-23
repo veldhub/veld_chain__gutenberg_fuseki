@@ -1,15 +1,108 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-<title>Error 404 Not Found</title>
-</head>
-<body>
-<h2>HTTP ERROR 404 Not Found</h2>
-<table>
-<tr><th>URI:</th><td>http://veld_run_server:3030/gutenberg/sparql?query=%23+case-insenstive+search+on+authors+%28%27agents%27%29+with+name+%2F+alias+containing+substring+value+%27stefan%27%0A%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+pgterms%3A+%3Chttp%3A%2F%2Fwww.gutenberg.org%2F2009%2Fpgterms%2F%3E%0A%0ASELECT+DISTINCT+%3Fagent+%3Fname_property+%3Fname_value+WHERE+%7B%0A++%3Fagent+rdf%3Atype+pgterms%3Aagent+.%0A++%3Fagent+%3Fname_property+%3Fname_value+.%0A++FILTER%28CONTAINS%28LCASE%28STR%28%3Fname_value%29%29%2C+LCASE%28%22stefan%22%29%29%29+.%0A++FILTER%28%3Fname_property+%3D+pgterms%3Aname+%7C%7C+%3Fname_property+%3D+pgterms%3Aalias%29+.+%0A%7D%0AORDER+BY+%3Fagent%0A%0A&amp;output=json</td></tr>
-<tr><th>STATUS:</th><td>404</td></tr>
-<tr><th>MESSAGE:</th><td>Not Found</td></tr>
-</table>
-
-</body>
-</html>
+{ "head": {
+    "vars": [ "agent" , "name_property" , "name_value" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/25287" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Lofving, Stefan" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/25287" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Löfving, Stefan" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/26291" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Zweig, Stefan" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/26440" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Jon Stefansson" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/37699" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Zeromski, Stefan" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/37699" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Żeromski, Stefan" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/39780" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Delavrancea, Barbu Stefanescu" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/41074" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Endlicher, Stefan" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/45907" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Stefani, Alessandro de" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/46813" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Klein, Stefan Isidor" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/46813" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Klein, Stefan J." }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/46813" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Klein, Stefan I." }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/53939" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Gie, S. F. N. (Stefanus Francois Naude)" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/53939" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Gie, Stefanus François Naudé" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/53939" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Gie, S. F. N. (Stefanus François Naudé)" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/54365" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Stefansson, Villi" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/54365" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Stefansson, Vilhjalmur" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/57167" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Sommier, Stefano" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/6293" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/alias" } ,
+        "name_value": { "type": "literal" , "value": "Karadzic, Vuk Stefanovic" }
+      } ,
+      { 
+        "agent": { "type": "uri" , "value": "http://www.gutenberg.org/2009/agents/6293" } ,
+        "name_property": { "type": "uri" , "value": "http://www.gutenberg.org/2009/pgterms/name" } ,
+        "name_value": { "type": "literal" , "value": "Karadžić, Vuk Stefanović" }
+      }
+    ]
+  }
+}
