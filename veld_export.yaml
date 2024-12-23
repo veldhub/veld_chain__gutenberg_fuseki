@@ -1,5 +1,5 @@
 x-veld:
-  code:
+  chain:
 
 
 services:
@@ -11,9 +11,9 @@ services:
       - ./data/queries/:/veld/input/
       - ./data/fuseki_export/:/veld/output/
     environment:
-      in_query_file: query1.rq
-      out_file: data.csv
-      out_format: csv
+      in_query_file: sample_query__authors_with_name_containing_substring.rq
+      out_file: out.json
+      out_format: json
       fuseki_dataset_name: gutenberg
 
 networks:

@@ -1,0 +1,10 @@
+# get all information about an author of book with uri <http://www.gutenberg.org/ebooks/10353>
+
+PREFIX ebooks: <http://www.gutenberg.org/ebooks/>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT * WHERE {
+  ebooks:10353 terms:creator ?agent . 
+  ?agent ?p ?o .
+}
+

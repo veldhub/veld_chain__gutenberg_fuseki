@@ -1,0 +1,9 @@
+# gets all books of a given author uri (in this case: Goethe)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX agent: <http://www.gutenberg.org/2009/agents/>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?book_uri WHERE {
+  ?book_uri terms:creator agent:586 . 
+}

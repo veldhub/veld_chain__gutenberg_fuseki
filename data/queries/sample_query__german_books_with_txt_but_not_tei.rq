@@ -1,0 +1,17 @@
+# This query fetches all german books that have txt or txt.utf-8 files, but no TEI.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX terms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?book_uri WHERE {
+  ?lang rdf:value "de"^^terms:RFC4646 .
+  ?book_uri terms:language ?lang .
+  FILTER NOT EXISTS {
+    ?book_uri terms:hasFormat ?format .
+    FILTER(STRENDS(STR(?format), "tei")) .
+  }
+  FILTER EXISTS {
+    ?book_uri terms:hasFormat ?format .
+    FILTER(STRENDS(STR(?format), "txt") || STRENDS(STR(?format), "txt.utf-8"))  .
+  }
+}

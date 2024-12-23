@@ -1,0 +1,13 @@
+# case-insenstive search on authors ('agents') with name / alias containing substring value 'stefan'
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX pgterms: <http://www.gutenberg.org/2009/pgterms/>
+
+SELECT DISTINCT ?agent ?name_property ?name_value WHERE {
+  ?agent rdf:type pgterms:agent .
+  ?agent ?name_property ?name_value .
+  FILTER(CONTAINS(LCASE(STR(?name_value)), LCASE("stefan"))) .
+  FILTER(?name_property = pgterms:name || ?name_property = pgterms:alias) . 
+}
+ORDER BY ?agent
+
