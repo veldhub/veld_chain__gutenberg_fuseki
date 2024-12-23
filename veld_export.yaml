@@ -12,7 +12,7 @@ services:
       - ./data/fuseki_export/:/veld/output/
     environment:
       in_query_file: sample_query__authors_with_name_containing_substring.rq
-      out_file: out.json
+      out_file: sample_query__authors_with_name_containing_substring.json
       out_format: json
       fuseki_dataset_name: gutenberg
 
