@@ -1,7 +1,6 @@
 x-veld:
   chain:
 
-
 services:
   veld_export:
     extends:
