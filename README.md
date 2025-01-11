@@ -11,8 +11,11 @@ arbitrarily complex sparql queries. As such, it can be used for linear workflows
 data must be queried in a structured and reproducible way, or it can be adapted into a centralized 
 triplestore index for arbitrary remote clients.
 
-All the steps, from download to ingest to querying, are encapsulated as chain velds, described
-below.
+All the steps, from download to ingest to querying, are encapsulated as chain velds, reusing these
+separate code velds:
+
+- https://github.com/veldhub/veld_code__downloader
+- https://github.com/veldhub/veld_code__apache_jena_fuseki
 
 ## requirements
 
@@ -21,7 +24,7 @@ below.
 
 ## how to reproduce
 
-clone this repo, with all its submodules (important, as they contain the code modules!):
+clone this repo, with all its submodules (important as they contain the code velds!):
 ```
 git clone --recurse-submodules https://github.com/veldhub/veld_chain__gutenberg_fuseki.git
 ```
