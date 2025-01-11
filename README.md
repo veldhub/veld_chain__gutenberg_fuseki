@@ -7,7 +7,9 @@ However, Project Gutenberg offers its entire metadata as a RDF/XML download:
 https://gutenberg.org/cache/epub/feeds/rdf-files.tar.bz2 .
 
 This repo uses that RDF/XML metadata and ingests it into an Apache Fuseki triplestore, for
-arbitrarily complex sparql queries. 
+arbitrarily complex sparql queries. As such, it can be used for linear workflows where gutenberg
+data must be queried in a structured and reproducible way, or it can be adapted into a centralized 
+triplestore index for arbitrary remote clients.
 
 All the steps, from download to ingest to querying, are encapsulated as chain velds, described
 below.
@@ -19,7 +21,7 @@ below.
 
 ## how to reproduce
 
-clone this repo, with all its submodules (important!):
+clone this repo, with all its submodules (important, as they contain the code modules!):
 ```
 git clone --recurse-submodules https://github.com/veldhub/veld_chain__gutenberg_fuseki.git
 ```
