@@ -1,5 +1,8 @@
 # veld_chain__gutenberg_fuseki
 
+This repo contains [chain velds](https://zenodo.org/records/13322913) encapsulating a gutenberg
+triplestore.
+
 [Project Gutenberg](https://www.gutenberg.org/) doesn't offer a native API and the only existing 
 third-party API ( https://gutendex.com/ ) works just on a superficial level. 
 
@@ -20,32 +23,32 @@ separate code velds:
 ## requirements
 
 - git
-- docker compose
+- docker compose (note: older docker compose versions require running `docker-compose` instead of 
+  `docker compose`)
 
-## how to reproduce
-
-clone this repo, with all its submodules (important as they contain the code velds!):
+Clone this repo with all its submodules
 ```
 git clone --recurse-submodules https://github.com/veldhub/veld_chain__gutenberg_fuseki.git
 ```
 
+## how to reproduce
+
 Then execute the following steps sequentially. See inside their respective VELD yaml files for more 
 details.
 
-### download gutenberg metadata
+**[./veld_download_gutenberg_metadata.yaml](./veld_download_gutenberg_metadata.yaml)**
 
-[./veld_download_gutenberg_metadata.yaml](./veld_download_gutenberg_metadata.yaml) : downloads the
-aforementioned metadata and extracts it to [./data/gutenberg_rdf/](./data/gutenberg_rdf/).
+Downloads the aforementioned metadata and extracts it to 
+[./data/gutenberg_rdf/](./data/gutenberg_rdf/).
 
 ```
 docker compose -f veld_download_gutenberg_metadata.yaml up
 ```
 
-### run server
+**[./veld_run_server.yaml](./veld_run_server.yaml)**
 
-[./veld_run_server.yaml](./veld_run_server.yaml) : runs an Apache Fuseki Triplestore server, which
-can be reached at http://localhost:3030/ . Its configuration is stored in 
-[./data/fuseki_config/](./data/fuseki_config/) and its data at
+Runs an Apache Fuseki Triplestore server, which can be reached at http://localhost:3030/ . Its 
+configuration is stored in [./data/fuseki_config/](./data/fuseki_config/) and its data at
 [./data/fuseki_data/](./data/fuseki_data/) . Important: leave this service running while executing 
 the next chains!
 
@@ -53,20 +56,19 @@ the next chains!
 docker compose -f veld_run_server.yaml up
 ```
 
-### import rdf
+**[./veld_import_rdf.yaml](./veld_import_rdf.yaml)**
 
-[./veld_import_rdf.yaml](./veld_import_rdf.yaml) : imports the extracted RDF data from the previous
-step into the triplestore. Note: this takes a while (on a AMD Ryzen 7 4800H, 32 GB RAM, it takes 
-roughly 11 hours) 
+Imports the extracted RDF data from the previous step into the triplestore. Note: this takes a 
+while (on a AMD Ryzen 7 4800H, 32 GB RAM, it takes roughly 11 hours) 
 
 ```
 docker compose -f veld_import_rdf.yaml up
 ```
 
-### export
+**[./veld_export.yaml](./veld_export.yaml)**
 
-[./veld_export.yaml](./veld_export.yaml) : exports data given rq (sparql query) files (samples can
-be found in [./data/queries/](./data/queries/)) into supported serializations which are saved into
+Exports data given rq (sparql query) files (samples can be found in 
+[./data/queries/](./data/queries/)) into supported serializations which are saved into 
 [./data/fuseki_export/](./data/fuseki_export/)
 
 ```
