@@ -28,7 +28,7 @@ separate code velds:
 
 Clone this repo with all its submodules
 ```
-git clone --recurse-submodules https://github.com/veldhub/veld_chain__gutenberg_fuseki.git
+git clone --recurse-submodules https://github.com/veldhub/veld_chain__gutenberg_triplestore.git
 ```
 
 ## how to reproduce
