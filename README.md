@@ -33,7 +33,7 @@ git clone --recurse-submodules https://github.com/veldhub/veld_chain__gutenberg_
 
 ## how to reproduce
 
-Then execute the following steps sequentially. See inside their respective VELD yaml files for more 
+Execute the following steps sequentially. See inside their respective VELD yaml files for more 
 details.
 
 **[./veld_download_gutenberg_metadata.yaml](./veld_download_gutenberg_metadata.yaml)**
